@@ -1,0 +1,35 @@
+<ion-header mode="ios" class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title> Order Report </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="this.orderStatus == 0">
+  <ion-row>
+    <ion-col class="ion-margin ion-text-center" style="font-weight: bold;">
+      <ion-text>
+        Your Order Placed Successfully. Redirecting to Order Page
+      </ion-text>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+<ion-content *ngIf="this.orderStatus != 0">
+  <ion-row>
+    <ion-col class="ion-margin ion-text-center" style="font-weight: bold; color: red">
+      <ion-text>
+        Your Transaction failed. Please click the button below to go back to cart and retry
+      </ion-text>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-margin ion-text-center">
+      <ion-button color="danger" (click) = "goToCart()">Go To Cart</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

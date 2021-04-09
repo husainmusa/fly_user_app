@@ -1,0 +1,351 @@
+@charset "UTF-8";
+/*
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : ionic 5 groceryee app
+  Created : 10-Sep-2020
+  This App Template Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2020-present initappz.
+*/
+.addOnquantity {
+  color: white;
+}
+
+.addon_original_price {
+  text-decoration: line-through;
+}
+
+.card_div {
+  padding-left: 15px;
+  position: relative;
+  width: 100%;
+}
+.card_div .kind {
+  height: 15px;
+  width: 15px;
+  margin-right: 5px;
+}
+.card_div .item_title {
+  display: flex;
+  align-items: center;
+}
+.card_div .offer {
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  right: 20px;
+  top: 0px;
+}
+.card_div .itemsKind {
+  font-size: 12px;
+}
+.card_div .variant .selecter {
+  font-size: 10px;
+  padding: 10px;
+  border: 1px solid lightgray;
+  margin: 10px 0px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: gray;
+  position: relative;
+  overflow: hidden;
+}
+.card_div .variant .selecter ion-icon {
+  box-shadow: none !important;
+  padding: 0px !important;
+  color: gray !important;
+  position: relative;
+  font-size: 10px;
+}
+.card_div .variant ion-item {
+  width: 100%;
+  min-width: 100%;
+  font-size: 10px !important;
+  --padding-start: 0px;
+  --padding-end: 0px;
+  font-size: 10px !important;
+}
+.card_div .variant ion-item ion-label {
+  font-size: 10px !important;
+}
+.card_div .variant ion-item ion-select {
+  --padding-end: 0px;
+  --padding-start: 0px;
+  width: 100%;
+  min-width: 100%;
+  font-size: 10px !important;
+}
+.card_div .price_lbl {
+  font-weight: 400;
+  font-size: 15px;
+}
+.card_div .price_lbl .original {
+  text-decoration: line-through;
+  font-size: 13px;
+}
+.card_div .price_lbl .sell {
+  font-weight: bold;
+}
+.card_div .price_lbl .dicount {
+  font-weight: bold;
+  font-size: 13px;
+}
+.card_div .name_lbl {
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.card_div .desc {
+  font-size: 12px;
+}
+.card_div .stoke {
+  font-size: 10px;
+}
+.card_div .stoke .in {
+  color: green;
+}
+.card_div .stoke .out {
+  color: indianred;
+}
+.card_div ion-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 20px;
+  color: #29b507;
+  padding: 5px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+.card_div ion-button {
+  position: absolute;
+  bottom: 0;
+  width: 90px;
+  font-size: 12px;
+  color: #29b507;
+  --border-color: #73D25C;
+}
+
+.cartBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+.cartBtn .abs_add {
+  width: 100px;
+  background: var(--ion-color-primary);
+  height: 30px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.cartBtn .abs_add ion-label {
+  color: white;
+  font-size: 14px;
+  font-family: muli-bold;
+}
+.cartBtn .abs_add img {
+  color: #FF8E80;
+  width: 25px;
+}
+
+.plus_minus {
+  width: 100px;
+  background: var(--ion-color-primary);
+  height: 30px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.plus_minus img {
+  color: #FF8E80;
+  width: 25px;
+}
+.plus_minus label {
+  color: white;
+  font-size: 14px;
+  font-family: muli-bold;
+}
+
+.addon_main_div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+  padding: 5px 0px;
+}
+
+.addon_main_div:last-child {
+  border-bottom: 0.5px solid #E8E8E8;
+}
+
+.addOnBtn {
+  position: relative;
+  overflow: hidden;
+  padding: 5px;
+  color: white;
+  background: #f27474;
+  border-radius: 5px;
+}
+
+.addons {
+  color: gray;
+  font-family: muli-bold;
+  margin: 5px 0px;
+}
+
+.addons_title {
+  color: gray;
+  margin-bottom: 5px;
+}
+
+.sub_card_div {
+  margin-right: 25px;
+  line-height: 20px;
+  margin-left: 25px;
+}
+
+.main_content_div {
+  width: 100%;
+  padding: 16px;
+  padding-bottom: 110px;
+}
+.main_content_div ion-label {
+  display: block;
+}
+.main_content_div .top_lbl {
+  font-size: 25px;
+  font-family: muli-bold;
+  margin-bottom: 10px;
+}
+.main_content_div .small_lbl {
+  color: lightgray;
+  font-family: muli-bold;
+  font-size: 18px;
+}
+.main_content_div .content_div {
+  padding: 10px 0px;
+}
+.main_content_div .content_div .sub_content_div {
+  border-bottom: 1px solid gray;
+}
+.main_content_div .content_div .card_div {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.main_content_div .content_div .card_div .back_image {
+  width: 100px;
+  height: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 7px;
+  min-width: 100px;
+  position: relative;
+}
+.main_content_div .content_div .card_div .back_image .percent {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  background: red;
+  left: 5px;
+  top: 2px;
+  line-height: 25px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 10px;
+  color: white;
+}
+.main_content_div .content_div .coupones {
+  display: flex;
+  padding: 20px 10px;
+  background: #f3f3f3;
+  margin-top: 10px;
+}
+.main_content_div .content_div .coupones .badge {
+  width: 25px;
+  height: 25px;
+}
+.main_content_div .content_div .coupones .title {
+  padding: 0px 10px;
+  color: var(--ion-color-primary);
+}
+.main_content_div .content_div .billing {
+  padding: 5px 10px;
+}
+.main_content_div .content_div .billing .singleRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+  border-bottom: 1px dashed lightgray;
+}
+.main_content_div .content_div .billing .singleRow .headerTitle {
+  font-size: 0.8rem;
+}
+.main_content_div .content_div .billing .singleRow .boldClass {
+  font-weight: bold;
+}
+.main_content_div .content_div .billing .singleRow .headerTotal {
+  font-size: 1rem;
+}
+.main_content_div .content_div .billing .singleRow .priceTotal {
+  font-size: 1rem;
+}
+.main_content_div .content_div .billing .singleRow .price {
+  font-size: 0.8rem;
+}
+.main_content_div .content_div .instructions {
+  color: var(--ion-color-primary);
+  padding: 5px 10px;
+}
+
+.bottom_div {
+  height: 60px;
+  width: 100%;
+  background: var(--ion-color-primary);
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 16px;
+}
+.bottom_div ion-label {
+  color: white;
+  font-family: muli-bold;
+  display: flex;
+}
+.bottom_div ion-label ion-icon {
+  padding-left: 5px;
+  font-size: 20px;
+}
+
+.nothing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+.nothing .imgs {
+  height: 100px;
+  width: 100px;
+}
+.nothing .bolder {
+  text-align: center;
+  font-weight: bold;
+}
