@@ -196,7 +196,8 @@ export class ProductPage implements OnInit {
             this.relatedProduct.push(products[i]);
           }
         }
-        this.related = this.relatedProduct.filter(x => (x.id !== this.id   ));
+        this.related = this.relatedProduct.filter(x => (x.id !== this.id  && x.store_id == this.productt.store_id ));
+        console.log('related',this.related)
       }
     }, error => {
       console.log(error);
@@ -365,23 +366,23 @@ export class ProductPage implements OnInit {
         this.checkCartItems();
         if (info.images) {
           const images = JSON.parse(info.images);
-          console.log('images======>>>', images);
-          if (images[0]) {
+          console.log('images[0]=====>>>', (images[0]));
+          if (images[0] !== 'NULL') {
             this.gallery.push(images[0]);
           }
-          if (images[1]) {
+          if (images[1]!== 'NULL') {
             this.gallery.push(images[1]);
           }
-          if (images[2]) {
+          if (images[2]!== 'NULL') {
             this.gallery.push(images[2]);
           }
-          if (images[3]) {
+          if (images[3]!== 'NULL') {
             this.gallery.push(images[3]);
           }
-          if (images[4]) {
+          if (images[4]!== 'NULL') {
             this.gallery.push(images[4]);
           }
-          if (images[5]) {
+          if (images[5]!== 'NULL') {
             this.gallery.push(images[5]);
           }
         }

@@ -44,6 +44,7 @@ export class StorePage implements OnInit {
   isClosedFilter: boolean = true;
   discount: any;
   haveSortFilter: boolean;
+  categoriesAdmin:any;
   constructor(
     private route: ActivatedRoute,
     private navCtrl: NavController,
@@ -55,7 +56,7 @@ export class StorePage implements OnInit {
     private modalController: ModalController,
     private alertCtrl: AlertController
   ) {
-    this.getCategorys()
+  
     this.haveSearch = false;
     this.route.queryParams.subscribe((data) => {
       // console.log(data);
@@ -63,6 +64,9 @@ export class StorePage implements OnInit {
         this.id = data.id;
         this.name = data.name;
         this.limit = 1;
+        this.getCategorys();
+       
+
         this.getStoreProducts(false, 'none');
       }
     });
@@ -102,7 +106,7 @@ export class StorePage implements OnInit {
   getStoreProducts(limit, event) {
     const param = {
       id: this.id,
-      limit: this.limit * 10,
+      limit: this.limit * 1000,
     };
     // console.log('param->', param);
     this.api.post('products/getByStoreId', param).subscribe((data: any) => {
@@ -530,13 +534,25 @@ export class StorePage implements OnInit {
   /***  get categories here and map in product  **/
 
   getCategorys(){
-    this.api.get('categories').subscribe((res: any) => {
-      if(res && res.data && res.data.length){
-         this.categories =  res.data;
-         console.log('categories=========>',  this.categories)
 
-      }
+    const param = {
+      id: this.id
+    }
+    this.api.post('categories/getByStoreId',param).subscribe((data: any) => {
+        if (data && data.status === 200 &&  data.data.catIndex  && data.data.catIndex != '' ) {
+          if (((x) => { try { JSON.parse(x); return true; } catch (e) { return false } })(data.data.catIndex )) {
+                this.categories =  JSON.parse(data.data['catIndex']);
+                console.log('this.categoriessdsd',this.categories )
+                this.categories.sort(function (a, b) {
+                  return a.index - b.index;
+                });
+              }
+          }else if(data && data.status === 300) {
+            this.categories = data.data;
+    
+          }
+      })
+    }
 
-    })
-  }
+
 }

@@ -209,7 +209,7 @@ export class ProductsPage implements OnInit {
   getProducts(limit, event) {
     const param = {
       id: this.id,
-      limit: this.limit * 10,
+      limit: this.limit * 1000,
       cid: localStorage.getItem('city')
     };
 
@@ -350,11 +350,11 @@ export class ProductsPage implements OnInit {
     this.navCtrl.back();
   }
 
-  loadData(event) {
-    console.log(event);
-    this.limit = this.limit + 1;
-    this.getProducts(true, event.target);
-  }
+  // loadData(event) {
+  //   console.log(event);
+  //   this.limit = this.limit + 1;
+  //   this.getProducts(true, event.target);
+  // }
 
   singleProduct(item) {
     const param: NavigationExtras = {

@@ -67,8 +67,9 @@
         <ion-label class="cat_name" *ngIf="cate.prod && cate.prod.length && cate.prod.length > 0">{{cate.name}}</ion-label>
       </div>
       <ion-row *ngIf="cate.prod && cate.prod.length && cate.prod.length > 0">
-        <ion-col size="6" *ngFor="let item of products;let i = index;">
-          <div style="border: 1px solid lightgray;">
+        <ng-container  *ngFor="let item of products;let i = index;" >
+        <ion-col size="6" *ngIf="cate.id == item.cate_id">
+          <div style="border: 1px solid lightgray;" >
             <div class="back_image"
               [ngStyle]="{'background-image':'url('+api.mediaURL+item.cover+'),url(assets/imgs/user.png)'}"
               (click)="singleProduct(item)">
@@ -76,6 +77,7 @@
               <div *ngIf="item.in_stoke === '0'" class="notInStoke">
                 <ion-label class="text"> {{util.getString('Out of Stoke')}} </ion-label>
               </div>
+            
               <img src="assets/imgs/veg.png" class="kind" alt="Veg" *ngIf="item.kind === '1'">
               <img src="assets/imgs/non.png" class="kind" alt="Non Veg" *ngIf="item.kind === '0'">
             </div>
@@ -184,6 +186,7 @@
             </div>
           </div>
         </ion-col>
+      </ng-container>
       </ion-row>
   
     </div>
@@ -197,7 +200,8 @@
         <ion-label *ngIf="cate.prod && cate.prod.length && cate.prod.length > 0">{{cate.name}}</ion-label>
       </div>
       <div *ngIf="cate.prod && cate.prod.length && cate.prod.length > 0 ">
-        <div class="card_div" *ngFor="let item of products;let i = index">
+      <ng-container  *ngFor="let item of products;let i = index">
+        <div class="card_div"  *ngIf="cate.id == item.cate_id">
           <div class="back_image" [style.backgroundImage]="'url('+api.mediaURL+item.cover+')'"
             (click)="singleProduct(item)">
             <div class="percent" *ngIf="item.discount !== '0'"> {{item.discount}}% </div>
@@ -308,16 +312,17 @@
             </div>
           </div>
         </div>
+        </ng-container>
       </div>
   
     </div>
     </ng-template>
   
   
-      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <!-- <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
         <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="">
         </ion-infinite-scroll-content>
-      </ion-infinite-scroll>
+      </ion-infinite-scroll> -->
     </div>
   
   </ion-content>
